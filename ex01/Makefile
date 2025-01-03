@@ -6,13 +6,13 @@
 #    By: akretov <akretov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 16:15:06 by akretov           #+#    #+#              #
-#    Updated: 2025/01/02 17:01:58 by akretov          ###   ########.fr        #
+#    Updated: 2025/01/03 17:07:21 by akretov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= PhoneBook
-SRCS	= *.cpp
-OBJS	= $(SRCS:.cpp=.o)
+SRCS    := $(shell find . -maxdepth 1 -type f -name "*.cpp")
+OBJS    := $(SRCS:.cpp=.o)
 
 # Compiler and flags
 CXX			= c++
