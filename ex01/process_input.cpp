@@ -6,11 +6,11 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 17:46:14 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/04 16:00:16 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/04 19:39:24 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "include/functions.hpp"
 
 // Initial promt
 void display_prompt() {
@@ -23,7 +23,7 @@ std::string get_user_input() {
     std::getline(std::cin, user_input);
     
     if (user_input.length() > 7) {
-        std::cerr << "The options were ADD, SEARCH or EXIT.\n";
+        std::cerr << "One command per request\n";
         return "";
     }
     

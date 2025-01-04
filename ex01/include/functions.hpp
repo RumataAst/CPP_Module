@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   functions.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 16:19:50 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/04 19:34:36 by akretov          ###   ########.fr       */
+/*   Created: 2025/01/04 19:35:01 by akretov           #+#    #+#             */
+/*   Updated: 2025/01/04 19:36:35 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cctype>
+#ifndef     FUNCTIONS_HPP
+# define    FUNCTIONS_HPP
 
-int main(int argc, char *argv[]) {
-    if (argc == 2) {
-        for (int i = 0; argv[1][i]; ++i)
-            std::cout << (char)std::toupper(argv[1][i]);
-        std::cout << std::endl;  
-    } else {
-       std:: cout << "There should be only 1 argument" << std::endl;
-    }
-    return 0;
-}
+#include <iostream>
+#include <map>
+#include <string>
+#include <limits>
+#include <cstdlib>  
+#include "PhoneBook.hpp"
+
+// process_command
+void                        process_command(const std::string& user_input);
+std::map<std::string, int>  create_command_map();
+
+//process_input
+void                        display_prompt();
+std::string                 get_user_input();
+
+#endif

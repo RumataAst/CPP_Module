@@ -6,7 +6,7 @@
 #    By: akretov <akretov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 16:15:06 by akretov           #+#    #+#              #
-#    Updated: 2025/01/03 17:07:21 by akretov          ###   ########.fr        #
+#    Updated: 2025/01/04 19:33:25 by akretov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,5 +35,4 @@ fclean: clean
 
 re: fclean all
 
-# Phony targets
 .PHONY: all clean fclean re

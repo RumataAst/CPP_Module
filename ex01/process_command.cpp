@@ -6,11 +6,11 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 17:03:33 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/03 18:08:55 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/04 19:41:51 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "include/functions.hpp"
 
 // Assign numbers for switch
 std::map<std::string, int> create_command_map() {
@@ -35,6 +35,7 @@ void process_command(const std::string& user_input) {
                 std::cout << "case 2: SEARCH\n";
                 break;
             case 3:
+                std::cout << "Exiting programm\n"; // i need to add return and check the 
                 exit (1);
                 break;
             default:
