@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:35:01 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/04 19:36:35 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/06 17:07:49 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 #include <map>
 #include <string>
 #include <limits>
-#include <cstdlib>  
+#include <cstdlib> 
+#include "Contact.hpp"
 #include "PhoneBook.hpp"
 
 // process_command

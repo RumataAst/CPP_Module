@@ -6,13 +6,15 @@
 #    By: akretov <akretov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 16:15:06 by akretov           #+#    #+#              #
-#    Updated: 2025/01/06 15:54:09 by akretov          ###   ########.fr        #
+#    Updated: 2025/01/06 16:53:41 by akretov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= PhoneBook
 SRCS    := $(shell find . -maxdepth 1 -type f -name "*.cpp")
-OBJS    := $(SRCS:.cpp=.o)
+BIN		:= bin
+OBJS    := $(addprefix $(BIN)/, $(SRCS:.cpp=.o))
+
 
 # Compiler and flags
 CXX			= c++
@@ -24,11 +26,14 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp
+$(BIN)/%.o: %.cpp | $(BIN)
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
+$(BIN):
+	+@mkdir $(BIN)
+
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(BIN)
 
 fclean: clean
 	@rm -f $(NAME)
