@@ -6,7 +6,7 @@
 #    By: akretov <akretov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 16:15:06 by akretov           #+#    #+#              #
-#    Updated: 2025/01/06 16:53:41 by akretov          ###   ########.fr        #
+#    Updated: 2025/01/07 16:27:10 by akretov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@ NAME	= PhoneBook
 SRCS    := $(shell find . -maxdepth 1 -type f -name "*.cpp")
 BIN		:= bin
 OBJS    := $(addprefix $(BIN)/, $(SRCS:.cpp=.o))
-
+INC		:= include
 
 # Compiler and flags
 CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
+CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I${INC}
 
 # Rules
 all: $(NAME)

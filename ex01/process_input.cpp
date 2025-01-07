@@ -6,11 +6,11 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 17:46:14 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/04 19:39:24 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/07 17:41:18 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/functions.hpp"
+#include "functions.hpp"
 
 // Initial promt
 void display_prompt() {

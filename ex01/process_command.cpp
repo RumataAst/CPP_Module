@@ -6,11 +6,12 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 17:03:33 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/04 19:41:51 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/07 17:01:55 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/functions.hpp"
+#include "functions.hpp"
+#include "Contact.hpp"
 
 // Assign numbers for switch
 std::map<std::string, int> create_command_map() {
@@ -23,6 +24,8 @@ std::map<std::string, int> create_command_map() {
 
 // Process user's input
 void process_command(const std::string& user_input) {
+    PhoneBook phoneBook;
+    Contact contact;
     std::map<std::string, int> command_map = create_command_map();
     
     if (command_map.find(user_input) != command_map.end()) {
@@ -33,9 +36,12 @@ void process_command(const std::string& user_input) {
                 break;
             case 2:
                 std::cout << "case 2: SEARCH\n";
+                contact.displayContact();   
                 break;
             case 3:
-                std::cout << "Exiting programm\n"; // i need to add return and check the 
+                /*  i need to add return to the function
+                    instead of exiting the whole program    */
+                std::cout << "Exiting programm\n";
                 exit (1);
                 break;
             default:

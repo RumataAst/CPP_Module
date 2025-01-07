@@ -6,11 +6,11 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 16:21:55 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/04 19:38:04 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/07 17:09:25 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/functions.hpp"
+#include "functions.hpp"
 
 int main() {
     std::string user_input;
