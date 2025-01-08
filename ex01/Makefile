@@ -6,7 +6,7 @@
 #    By: akretov <akretov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 16:15:06 by akretov           #+#    #+#              #
-#    Updated: 2025/01/07 16:27:10 by akretov          ###   ########.fr        #
+#    Updated: 2025/01/08 18:49:55 by akretov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ INC		:= include
 
 # Compiler and flags
 CXX			= c++
-CXXFLAGS	= -Wall -Wextra -Werror -std=c++98 -I${INC}
+CXXFLAGS	= -g -Wall -Wextra -Werror -std=c++98 -I${INC}
 
 # Rules
 all: $(NAME)

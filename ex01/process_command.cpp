@@ -6,48 +6,29 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 17:03:33 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/07 17:01:55 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/08 18:43:09 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.hpp"
 #include "Contact.hpp"
 
-// Assign numbers for switch
-std::map<std::string, int> create_command_map() {
-    std::map<std::string, int> command_map;
-    command_map["ADD"] = 1;
-    command_map["SEARCH"] = 2;
-    command_map["EXIT"] = 3;
-    return command_map;
+// Initial promt
+void display_prompt() {
+    std::cout << "Enter your command: ADD, SEARCH or EXIT\n";
 }
 
 // Process user's input
-void process_command(const std::string& user_input) {
-    PhoneBook phoneBook;
-    Contact contact;
-    std::map<std::string, int> command_map = create_command_map();
+// int process_command(const std::string& user_input) {
+//     std::string user_input;
+//     std::getline(std::cin, user_input);
     
-    if (command_map.find(user_input) != command_map.end()) {
-        int command = command_map[user_input];
-        switch (command) {
-            case 1:
-                std::cout << "case 1: ADD\n";
-                break;
-            case 2:
-                std::cout << "case 2: SEARCH\n";
-                contact.displayContact();   
-                break;
-            case 3:
-                /*  i need to add return to the function
-                    instead of exiting the whole program    */
-                std::cout << "Exiting programm\n";
-                exit (1);
-                break;
-            default:
-                std::cout << "Invalid command. Please re-try\n";
-        }
-    } else {
-        std::cout << "Invalid input.\n";
-    }
-}
+//     if (strncmp(user_input.c_str(), "ADD", 3) == 0)
+//         // ADD Statement
+//     else if (strncmp(user_input.c_str(), "SEARCH", 6))
+//         // Search
+//     else if (strncmp(user_input.c_str(), "EXIT", 4) == 0)
+//         return -1;
+//     else
+//         std::cerr << "Incorrect command\n";
+// }

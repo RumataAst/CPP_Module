@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 16:22:04 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/07 18:28:28 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/08 18:54:25 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,19 @@
 class PhoneBook {
 private:
     Contact contacts[8];
-    int     currentIndex;
+    int     _columnWidth;
+    int     _currentIndex;
 
 public:
-    // Constructor with default arguments
     PhoneBook();
     ~PhoneBook();
-    
-    void addContact (void);
-    void listContacts (void) const;
+
+    void setColumnWidth(int width = 10);
+    int getColumnWidth(void) const;
+
+    // Updated method to add contacts (no need for _index)
+    void addContact(const Contact& contact);
+    void displayPhoneBook(int _columnWidth) const;
 };
 
 #endif
