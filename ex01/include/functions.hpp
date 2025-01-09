@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:35:01 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/08 18:32:40 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/09 17:31:57 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,8 @@
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 
-// process_command
-int     process_command (const std::string& user_input);
+// utils.cpp
 void    display_prompt (void);
-
-//utils
+int     process_command (PhoneBook& phoneBook);
 
 #endif

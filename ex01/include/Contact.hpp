@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:16 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/08 18:53:56 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/09 18:22:00 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,23 @@
 
 class Contact {
 private:
-    std::string _firstName, _lastName, _nickname, _darkestSecret, _phoneNumber;
+    std::string _firstName, _lastName, _nickname,  _phoneNumber, _darkestSecret;
 
+    void setValidatedStringInput(std::string& input, const std::string& prompt);
+    void setValidatedPhoneNumber(std::string& input, const std::string& prompt);
 public:
     // Constructor with default arguments
     Contact(const std::string& _firstName = "", const std::string& _lastName = "",
-            const std::string& _nickname = "", const std::string& _darkestSecret = "", const std::string& _phoneNumber = "");
+            const std::string& _nickname = "", const std::string& _phoneNumber = "", const std::string& _darkestSecret = "");
 
     // Destructor
     ~Contact();
 
-    // Function to set contact information
-    void setContact(const std::string& _firstName, const std::string& _lastName, 
-                    const std::string& _nickname, const std::string& _darkestSecret, const std::string& _phoneNumber);
+     // Function to set contact information
+    void setContact();
 
     // Getter methods for contact information
-    std::string getFirstName() const { return _firstName; }
+    std::string getFirstName() const { return _firstName; }; 
     std::string getLastName() const { return _lastName; }
     std::string getNickname() const { return _nickname; }
     std::string getPhoneNumber() const { return _phoneNumber; }
