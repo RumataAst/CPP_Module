@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:08:06 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/09 18:20:50 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/09 18:31:04 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void Contact::setValidatedPhoneNumber(std::string& input, const std::string& pro
         else {
             isValidPhone = true;
 
-            if (input[0] == '+') {
+            if (input[0] == '+' || input[0] < '0' || input[0] > '9') {
                 // If the first character is +, check if the rest are digits
                 for (size_t i = 1; i < input.length(); ++i) {
                     if (input[i] < '0' || input[i] > '9') {
@@ -112,16 +112,7 @@ void Contact::setValidatedPhoneNumber(std::string& input, const std::string& pro
                         break;
                     }
                 }
-            } else {
-                // If there is no + at the beginning, ensure all characters are digits
-                for (size_t i = 0; i < input.length(); ++i) {
-                    if (input[i] < '0' || input[i] > '9') {
-                        isValidPhone = false;
-                        break;
-                    }
-                }
             }
-
             if (!isValidPhone) {
                 std::cout << "Invalid phone number! Only numbers are allowed after '+'." << std::endl;
             }

@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:16 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/09 18:22:00 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/09 18:35:42 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,12 @@ private:
 
     void setValidatedStringInput(std::string& input, const std::string& prompt);
     void setValidatedPhoneNumber(std::string& input, const std::string& prompt);
+
+    std::string getLastName() const { return _lastName; }
+    std::string getNickname() const { return _nickname; }
+    std::string getPhoneNumber() const { return _phoneNumber; }
+    std::string getDarkestSecret() const { return _darkestSecret; }
+
 public:
     // Constructor with default arguments
     Contact(const std::string& _firstName = "", const std::string& _lastName = "",
@@ -29,15 +35,10 @@ public:
     // Destructor
     ~Contact();
 
+    std::string getFirstName() const { return _firstName; }; 
      // Function to set contact information
     void setContact();
 
-    // Getter methods for contact information
-    std::string getFirstName() const { return _firstName; }; 
-    std::string getLastName() const { return _lastName; }
-    std::string getNickname() const { return _nickname; }
-    std::string getPhoneNumber() const { return _phoneNumber; }
-    std::string getDarkestSecret() const { return _darkestSecret; }
 
     // Function to display contact information
     void displayContact(int colWidth) const;
