@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:08:06 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/09 18:31:04 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/10 17:15:49 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,98 +28,87 @@ std::string Contact::truncate(std::string str, int colWidth) const {
     return str;
 }
 
+int Contact::checkSpacesAndLength(const std::string& input) {
+    if (input.empty()) {
+        std::cout << "Input cannot be empty. Please try again." << std::endl;
+        return EMPTY_INPUT;
+    }
+
+    bool isOnlySpaces = true;
+    for (size_t i = 0; i < input.length(); ++i)  {
+        if (!std::isspace(input[i])) {
+            isOnlySpaces = false;
+            break;
+        }
+    }
+    if (isOnlySpaces) {
+        std::cout << "Input cannot be just spaces or tabs. Please try again." << std::endl;
+        return ONLY_SPACES;
+    }
+
+    if (input.length() > 20) {
+        std::cout << "Input is too long! Maximum length is 20 characters. Please try again." << std::endl;
+        return TOO_LONG;
+    }
+
+    return VALID_INPUT;
+}
+
+// Validate string input to allow only alphabetic characters
 void Contact::setValidatedStringInput(std::string& input, const std::string& prompt) {
-    bool isOnlySpaces = false;
+    bool isValid = false;
 
     do {
         std::cout << prompt;
         std::getline(std::cin, input);
 
-        // Check if the input is just spaces or tabs
-        isOnlySpaces = true;
-        for (size_t i = 0; i < input.length(); ++i) {
-            if (input[i] != ' ' && input[i] != '\t') {
-                isOnlySpaces = false;
+        int checkResult = checkSpacesAndLength(input);
+        if (checkResult != VALID_INPUT) {
+            continue; // Retry if invalid input
+        }
+
+        // Check if input contains only letters
+        isValid = true;
+        for (size_t i = 0; i < input.length(); ++i)  {
+            if (!std::isalpha(input[i]) && input[i] != ' ') {
+                isValid = false;
+                std::cout << "Input must contain only letters (space is allowed). Please try again." << std::endl;
                 break;
             }
         }
-
-        if (isOnlySpaces) {
-            std::cout << "Input cannot be just spaces or tabs. Please try again." << std::endl;
-        }
-        // Check for empty input
-        else if (input.empty()) {
-            std::cout << "Input cannot be empty. Please try again." << std::endl;
-        }
-        // Check for input length
-        else if (input.length() > 20) {
-            std::cout << "Input is too long! Maximum length is 20 characters. Please try again." << std::endl;
-        }
-        // Check for only letters in the input
-        else {
-            bool isValid = true;
-            for (size_t i = 0; i < input.length(); ++i) {
-                if (!isalpha(input[i])) {  // Check if the character is not a letter
-                    isValid = false;
-                    break;
-                }
-            }
-
-            if (!isValid) {
-                std::cout << "Input must contain only letters. Please try again." << std::endl;
-            }
-        }
-    } while (input.empty() || input.length() > 20 || isOnlySpaces || !isalpha(input[0]));
+    } while (!isValid);
 }
 
+// Validate phone number input
 void Contact::setValidatedPhoneNumber(std::string& input, const std::string& prompt) {
-    bool isOnlySpaces = false;
     bool isValidPhone = false;
 
     do {
         std::cout << prompt;
         std::getline(std::cin, input);
 
-        // Check if the input is just spaces or tabs
-        isOnlySpaces = true;
-        for (size_t i = 0; i < input.length(); ++i) {
-            if (input[i] != ' ' && input[i] != '\t') {
-                isOnlySpaces = false;
+        int checkResult = checkSpacesAndLength(input);
+        if (checkResult != VALID_INPUT) {
+            continue; // Retry if invalid input
+        }
+
+        // Check if input is a valid phone number
+        isValidPhone = true;
+        size_t startIndex = 0;
+
+        if (input[0] == '+') {
+            startIndex = 1;
+        }
+
+        for (size_t i = startIndex; i < input.length(); ++i) {
+            if (!std::isdigit(input[i])) {
+                isValidPhone = false;
+                std::cout << "Invalid phone number! Only numbers are allowed, optionally starting with '+'." << std::endl;
                 break;
             }
         }
-
-        if (isOnlySpaces) {
-            std::cout << "Input cannot be just spaces or tabs. Please try again." << std::endl;
-        }
-        // Check for empty input
-        else if (input.empty()) {
-            std::cout << "Input cannot be empty. Please try again." << std::endl;
-        }
-        // Check for input length
-        else if (input.length() > 20) {
-            std::cout << "Input is too long! Maximum length is 20 characters. Please try again." << std::endl;
-        }
-        // Check for valid phone number format
-        else {
-            isValidPhone = true;
-
-            if (input[0] == '+' || input[0] < '0' || input[0] > '9') {
-                // If the first character is +, check if the rest are digits
-                for (size_t i = 1; i < input.length(); ++i) {
-                    if (input[i] < '0' || input[i] > '9') {
-                        isValidPhone = false;
-                        break;
-                    }
-                }
-            }
-            if (!isValidPhone) {
-                std::cout << "Invalid phone number! Only numbers are allowed after '+'." << std::endl;
-            }
-        }
-    } while (input.empty() || input.length() > 20 || isOnlySpaces || !isValidPhone);
+    } while (!isValidPhone);
 }
-
 
 void Contact::setContact() {
     setValidatedStringInput(this->_firstName, "Enter first name (max 20 characters): ");

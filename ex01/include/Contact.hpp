@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:16 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/09 18:35:42 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/10 17:18:37 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ class Contact {
 private:
     std::string _firstName, _lastName, _nickname,  _phoneNumber, _darkestSecret;
 
-    void setValidatedStringInput(std::string& input, const std::string& prompt);
-    void setValidatedPhoneNumber(std::string& input, const std::string& prompt);
+    int     checkSpacesAndLength (const std::string& input);
+    void    setValidatedStringInput(std::string& input, const std::string& prompt);
+    void    setValidatedPhoneNumber(std::string& input, const std::string& prompt);
 
     std::string getLastName() const { return _lastName; }
     std::string getNickname() const { return _nickname; }

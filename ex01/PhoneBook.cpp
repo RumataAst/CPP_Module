@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 17:50:54 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/09 18:52:08 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/10 17:21:44 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,12 @@ void PhoneBook::displayPhoneBook(void) const {
     std::cout << "---------------------------------------------" << std::endl;
 
     // Loop over each contact in the phonebook
-    for (int i = 0; i < 8; ++i) {  // or use contacts.size() if using dynamic collection
+    for (int i = 0; i < 8; ++i) {
         // If the contact has a first name, display the contact info
         if (!contacts[i].getFirstName().empty()) {
-            // Display the index (i + 1) and the contact's details
             std::cout << "|" << std::setw(_columnWidth) << std::right << i + 1
                       << "|";
-            contacts[i].displayContact(_columnWidth);  // Calls the method in Contact to handle display
+            contacts[i].displayContact(_columnWidth);
         }
     }
 }
