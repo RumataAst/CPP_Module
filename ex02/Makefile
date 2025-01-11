@@ -6,11 +6,11 @@
 #    By: akretov <akretov@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/02 16:15:06 by akretov           #+#    #+#              #
-#    Updated: 2025/01/10 17:27:49 by akretov          ###   ########.fr        #
+#    Updated: 2025/01/11 17:05:43 by akretov          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= PhoneBook
+NAME	= Account
 SRCS    := $(shell find . -maxdepth 1 -type f -name "*.cpp")
 BIN		:= bin
 OBJS    := $(addprefix $(BIN)/, $(SRCS:.cpp=.o))
