@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 19:35:01 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/10 17:18:01 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/12 16:16:20 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 # define    FUNCTIONS_HPP
 
 #include <iostream>
-#include <cstring>
-#include <string>
-#include <limits>
-#include <cstdlib> 
-#include <iomanip> 
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
 

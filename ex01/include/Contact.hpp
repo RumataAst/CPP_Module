@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:16 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/11 17:34:16 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/12 16:15:27 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 #define CONTACT_HPP
 
 #include "functions.hpp"
+#include <string>
+#include <iostream>
+#include <iomanip>
+#include <cctype>
 
 class Contact {
 private:

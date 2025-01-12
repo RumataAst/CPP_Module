@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 16:22:04 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/10 17:23:02 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/12 16:16:13 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 # define    PHONE_BOOK_HPP
 
 #include "functions.hpp"
+#include <iostream>
+#include <cstring>
+#include <string>
+#include <limits>
+#include <cstdlib> 
+#include <iomanip> 
 
 class PhoneBook {
 private:
@@ -28,7 +34,6 @@ public:
     void setColumnWidth(int width = 10);
     int getColumnWidth(void) const;
 
-    // Updated method to add contacts (no need for _index)
     void addContact (void);
     void displayPhoneBook(void) const;
 };
