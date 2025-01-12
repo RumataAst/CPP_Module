@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 16:22:04 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/12 16:16:13 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/12 20:28:33 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #include <limits>
 #include <cstdlib> 
 #include <iomanip> 
+#include <stdexcept>
 
 class PhoneBook {
 private:

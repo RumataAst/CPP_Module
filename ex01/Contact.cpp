@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:08:06 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/12 16:16:39 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/12 20:37:11 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,9 +118,18 @@ void Contact::setContact() {
     setValidatedStringInput(this->_darkestSecret, "Enter darkest secret (max 20 characters): ");
 }
 
+void Contact::displayFullContact(void) const {
+    std::cout    << " " << _firstName 
+                << " |"  << " " << _lastName
+                << " |"  << " " << _nickname
+                << " |"  << " " << _phoneNumber
+                << " |"  << " " << _darkestSecret
+                << " |"  << std::endl;
+}
+
 void Contact::displayContact(int colWidth) const {
     std::cout   << std::setw(colWidth) << std::right << truncate(_firstName, colWidth)
                 << "|" << std::setw(colWidth) << std::right << truncate(_lastName, colWidth)
                 << "|" << std::setw(colWidth) << std::right << truncate(_nickname, colWidth)
-                << "|" << std::endl;
+                << std::endl;
 }

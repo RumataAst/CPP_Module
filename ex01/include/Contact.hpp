@@ -6,7 +6,7 @@
 /*   By: akretov <akretov@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:07:16 by akretov           #+#    #+#             */
-/*   Updated: 2025/01/12 16:15:27 by akretov          ###   ########.fr       */
+/*   Updated: 2025/01/12 20:28:05 by akretov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ public:
 
     // Function to display contact information
     void displayContact(int colWidth) const;
-
+    void displayFullContact(void) const;
     // Function to truncate string for display in the desired format
     std::string truncate(std::string str, int colWidth) const;
 };
