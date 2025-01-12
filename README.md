@@ -12,7 +12,6 @@ The goal of this exercise is to create a simple program that converts lowercase 
 #### Key Learning Points:
 - Understanding the structure of a C++ program.
 - Using input (`std::cin`) and output (`std::cout`) streams.
-- Manipulating characters and working with ASCII values.
 
 ---
 
