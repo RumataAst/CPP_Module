@@ -6,7 +6,7 @@ This module introduces the foundational concepts and syntax of C++, laying the g
 
 The module consists of three exercises, each designed to build familiarity with C++ syntax, classes, and basic programming practices:
 
-### Exercise 00: Hello, C++ Syntax!
+### Exercise 00: C++ Syntax
 The goal of this exercise is to create a simple program that converts lowercase letters to uppercase. This task serves as an introduction to the syntax of C++ and provides hands-on experience with basic operations, input/output handling, and character manipulation.
 
 #### Key Learning Points:
